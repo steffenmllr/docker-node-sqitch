@@ -1,4 +1,4 @@
-FROM dockerfile/nodejs
+FROM bradrydzewski/node:0.10
 MAINTAINER Steffen Mueller <steffen@mllrsohn.com>
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
