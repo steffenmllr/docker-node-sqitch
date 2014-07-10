@@ -1,8 +1,8 @@
 FROM bradrydzewski/node:0.10
 MAINTAINER Steffen Mueller <steffen@mllrsohn.com>
 
-RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
-RUN sudo echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+RUN sudo echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+RUN sudo wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 RUN sudo apt-get update
 
 RUN sudo apt-get -y -q install git make cmake gcc g++ build-essential libssl-dev python-software-properties software-properties-common
